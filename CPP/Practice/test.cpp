@@ -2,12 +2,21 @@
 #define For(i, a, b) for (int i = a; i < b; ++i)
 typedef long long ll;
 
-ll& temp (){
-    static ll test = 20;
-    return test;
-}
+int foo1(int a, int b) { return a * b + b; }
+int foo2(int a, int b) { return (a + b) * b; }
+
+int (*binary_int_op)(int, int);
+
 int main() {
-    ll& test = temp();
-    std ::cout << test << std::endl;
+    int choice;
+    std::cin >> choice;
+    if (choice == 1) {
+        binary_int_op = foo1;
+    } else {
+        binary_int_op = foo2;
+    }
+    int m, n;
+    std::cin >> m >> n;
+    std::cout << binary_int_op(m, n);
     return 0;
 }
