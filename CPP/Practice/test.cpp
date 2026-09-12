@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdio>
 #include <fstream>
+#include <string>
 #define For(i, a, b) for (int i = a; i < b; ++i)
 typedef long long ll;
 std::ifstream fin("datain.txt");
