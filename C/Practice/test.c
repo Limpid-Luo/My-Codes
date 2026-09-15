@@ -1,10 +1,15 @@
 #include <stdio.h>
-/*
-    代码能力复建ing...
-*/
+//#define int long long
+#define For(i, a, b) for (int i = a; i < b; ++i)
 signed main() {
-    int tag = 0;
+    int sum= 1;
+    For(i, 1, 11) {
+        sum *= i;
+    }
+    printf("%d\n", sum);
+    /*
     scanf("%d", &tag);
     printf("%d\n", ++tag);
+    */
     return 0;
 }
