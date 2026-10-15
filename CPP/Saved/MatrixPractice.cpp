@@ -15,14 +15,13 @@ public:
     void print() const
     {
         std::cout << row_x << " " << row_y
-            << " " << col_x << " " << col_y << std::endl;
+                  << " " << col_x << " " << col_y << std::endl;
     }
-    matrix transpose()
+    matrix transpose() const
     {
         return matrix(
             row_x, col_x,
-            row_y, col_y
-        );
+            row_y, col_y);
     }
 
     matrix operator+(const matrix &temp) const
@@ -31,38 +30,34 @@ public:
             row_x + temp.row_x,
             row_y + temp.row_y,
             col_x + temp.col_x,
-            col_y + temp.col_y
-        );
+            col_y + temp.col_y);
     }
     matrix operator-(const matrix &temp) const
     {
         return matrix(
-        row_x - temp.row_x,
-        row_y - temp.row_y,
-        col_x - temp.col_x,
-        col_y - temp.col_y
-        );
+            row_x - temp.row_x,
+            row_y - temp.row_y,
+            col_x - temp.col_x,
+            col_y - temp.col_y);
     }
     matrix operator*(const matrix &temp) const
     {
         return matrix(
-            temp.row_x*row_x + temp.col_x*row_y,
-            temp.row_y*row_x + temp.col_y*row_y,
-            temp.row_x*col_x + temp.col_x*col_y,
-            temp.row_y*col_x + temp.col_y*col_y
-        );
+            temp.row_x * row_x + temp.col_x * row_y,
+            temp.row_y * row_x + temp.col_y * row_y,
+            temp.row_x * col_x + temp.col_x * col_y,
+            temp.row_y * col_x + temp.col_y * col_y);
     }
-
 };
 int main()
-{   
+{
     matrix m1;
     matrix m2;
     std::cout << "Please enter the matrix 01 by following four numbers:" << std::endl;
     std::cin >> m1.row_x >> m1.row_y >> m1.col_x >> m1.col_y;
     std::cout << "Please enter the matrix 02 by following four numbers:" << std::endl;
     std::cin >> m2.row_x >> m2.row_y >> m2.col_x >> m2.col_y;
-    matrix m3 = m1 * m2;//you can change the way within + , - and *
+    matrix m3 = m1 * m2; // You can change the way within +, - and *
     std::cout << "The result is:" << std::endl;
     m3.print();
     return 0;
