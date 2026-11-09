@@ -1,33 +1,23 @@
-#include <iostream>
-#include <vector>
-#define For(a, b, c) for (int a = b; a < c; ++a)
-using namespace std;
+#include <bits/stdc++.h>
+#define rep(i,a,b) for (int i = a; i < b; ++ i)
+#define per(i,a,b) for (int i = a; i > b; -- i)
+#define endl '\n'
+#define int long long
 
-bool isPrime(const int &n)
-{
-    if (n <= 1)
-        return 0;
-    if (n == 2 || n == 3)
-        return 1;
-    if (n % 6 != 1 && n % 6 != 5)
-        return 0;
-    for (int i = 5; i * i <= n; i += 6)
-        if (n % i == 0 || n % (i + 2) == 0)
-            return 0;
-    return 1;
-}
+using namespace std;
 
 void solve()
 {
-    int n;
-    cin >> n;
-    cout << (isPrime(n) ? "Yes" : "No");
+    
 }
-int main()
+
+signed main()
 {
     ios::sync_with_stdio(0);
     cin.tie(0);
+    cout.tie(0);
     int t = 1;
+    //cin >> t;
     while (t --)
     {
         solve();
